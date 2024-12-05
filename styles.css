@@ -1,0 +1,303 @@
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Шапка */
+.header {
+    background: linear-gradient(45deg, #5900ff, #00aeff );
+    color: white;
+    text-align: center;
+    padding: 4rem 1rem; /* Увеличен отступ для избежания перекрытия */
+    margin-top: 60px; /* Компенсация высоты навигации */
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin: 0;
+}
+
+.header p {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Секции */
+.about, .projects, .footer {
+    padding: 2rem 0;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.about img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.project-card {
+    background: white;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Подвал */
+.footer {
+    text-align: center;
+    background: #343a40;
+    color: white;
+}
+
+.footer .social-icons {
+    margin: 1rem 0;
+}
+
+.footer .icon {
+    margin: 0 10px;
+    color: white;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer .icon:hover {
+    color: #0059ff;
+}
+
+/* Навигация */
+.navbar {
+    background: #343a40;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    top: 0;
+}
+
+.nav-list {
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    background: #343a40;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.nav-list.active {
+    display: flex;
+}
+
+.nav-list li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.menu-toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 4px 0;
+}
+
+/* Для больших экранов */
+@media (min-width: 768px) {
+    .nav-list {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        background: none;
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .header {
+        padding: 6rem 1rem; /* Увеличен отступ для ПК */
+    }
+}
+.about {
+    padding: 2rem 0;
+    background: #f9f9f9; /* Светлый фон для контраста */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap; /* Для адаптивности */
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.about img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    flex-shrink: 0; /* Чтобы изображение не сжималось */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для фото */
+}
+
+.about-text {
+    max-width: 700px; /* Ограничение ширины текста */
+    line-height: 1.8; /* Межстрочный интервал */
+    color: #333;
+    text-align: justify; /* Выравнивание текста по ширине */
+}
+
+.about-text p {
+    margin-bottom: 1rem; /* Отступы между абзацами */
+    font-size: 1.1rem; /* Немного увеличенный шрифт */
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #003cff ; /* Цвет заголовка */
+}
+/* Стили для иконок социальных сетей */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem; /* Отступ снизу, чтобы отделить иконки от текста */
+}
+
+.social-icons .icon {
+    font-size: 2.5rem; /* Увеличиваем размер иконок */
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+    color: #ff0000; /* Цвет при наведении */
+
+}
+
+.social-icons .icon i {
+    transition: transform 0.3s ease; /* Анимация при наведении */
+}
+
+.social-icons .icon:hover i {
+    transform: scale(1.1); /* Легкое увеличение иконки при наведении */
+}
+/* Стили для секции портфолио */
+.portfolio {
+    padding: 2rem 0;
+    background: #f9f9f9; /* Светлый фон */
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #007bff; /* Цвет заголовка */
+}
+
+.portfolio-slider {
+    display: flex;
+    overflow-x: auto; /* Позволяет прокручивать по горизонтали */
+    gap: 2rem; /* Отступы между изображениями */
+    scroll-snap-type: x mandatory; /* Принудительная привязка слайдов */
+    padding-bottom: 1rem;
+}
+
+.portfolio-item {
+    flex: 0 0 auto; /* Не растягивать и не сжимать */
+    width: 300px; /* Фиксированная ширина каждого элемента */
+    overflow: hidden; /* Обрезаем лишнее */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для фотографий */
+    scroll-snap-align: start; /* Привязка слайдов */
+    transition: transform 0.3s ease; /* Плавное увеличение при наведении */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Заполняем блок без искажения */
+    display: block;
+}
+
+/* Эффект увеличения при наведении на изображение */
+.portfolio-item:hover {
+    transform: scale(1.05); /* Легкое увеличение при наведении */
+}
+
+/* Для мобильных устройств - скрываем полосы прокрутки */
+.portfolio-slider::-webkit-scrollbar {
+    display: none; /* Скрыть полосу прокрутки */
+}
+
+/* Для других браузеров */
+.portfolio-slider {
+    -ms-overflow-style: none;  /* Для IE и Edge */
+    scrollbar-width: none; /* Для Firefox */
+}
+/* Стили для секции портфолио */
+.portfolio {
+    padding: 2rem 0;
+    background: #f9f9f9; /* Светлый фон */
+}
+
+.portfolio h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #007bff; /* Цвет заголовка */
+}
+
+.portfolio-gallery {
+    display: flex;
+    gap: 2rem; /* Отступы между изображениями */
+    justify-content: center; /* Центрирование */
+}
+
+.portfolio-item {
+    width: 30%; /* Ширина каждого изображения */
+    overflow: hidden; /* Чтобы изображение не выходило за пределы блока */
+    border-radius: 8px; /* Скругленные углы */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Тень для фотографий */
+}
+
+.portfolio-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Чтобы изображение заполняло контейнер */
+    display: block;
+}
